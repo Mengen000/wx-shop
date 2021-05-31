@@ -1,0 +1,23 @@
+<view>
+  <SearchInput></SearchInput>
+  <Tabs tabs="{{tabs}}" bindtabItemChange="handleTabItemChange">
+    <block wx:if="{{tabs[0].isActive}}">
+      <view class="first_tab">
+        <navigator url="../goods_detail/index?goods_id={{item.goods_id}}" class="goods_item" wx:for="{{goods_list}}" wx:key="goods_id">
+          <view class="goods_img_wrap">
+            <image mode="widthFix"
+              src="{{item.goods_small_logo?item.goods_small_logo:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage.biaobaiju.com%2Fuploads%2F20190624%2F13%2F1561354157-sRexUrtuil.png&refer=http%3A%2F%2Fimage.biaobaiju.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1624001398&t=74bbed188146e73099253ebc55ab4730'}}">
+            </image>
+          </view>
+          <view class="goods_info_wrap">
+            <view class="goods_name">{{item.goods_name}}</view>
+            <view class="goods_price">￥{{item.goods_price}}</view>
+          </view>
+        </navigator>
+      </view>
+
+    </block>
+    <block wx:elif="{{tabs[1].isActive}}">222</block>
+    <block wx:else>333</block>
+  </Tabs>
+</view>
